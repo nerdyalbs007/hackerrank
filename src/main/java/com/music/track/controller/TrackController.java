@@ -31,9 +31,10 @@ public class TrackController {
      * Get all tracks
      * @return
      */
-    @GetMapping()
+    @SuppressWarnings("unchecked")
+	@GetMapping("/music/platform/v1/tracks")
     public ResponseEntity<List<Track>> getAllTracks(){
-        return null;
+    	return (ResponseEntity<List<Track>>) trackService.getAllTracks();
     }
     /**
      * Delete a track
